@@ -1,0 +1,64 @@
+
+.container_search_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 639px) {
+    .container_search_mobile {
+        display: block;
+    }
+
+    .input_modal {
+        background-color: rgb(51, 49, 49);
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px 0px;
+    }
+
+    .suggest_container_mobile {
+        margin: 15px 0px 5px 0px;
+
+
+    
+        & h4 {
+            font-size: 18px;
+            border-bottom: solid 0.5px;
+            padding-bottom: 8px;
+        }
+
+    
+        
+
+
+    &::-webkit-scrollbar-corner {
+        background-color: #2e2a2a; /* Color de fondo de la esquina */
+    }
+        
+
+    }
+
+    .search_result_item {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+
+
+        & .search-result_details_container {
+            & h5 {
+                color: white;
+                font-weight: 500;
+            }
+        }
+
+        & .search-result_image_container {
+            & picture {
+                & img {
+                    border-radius: 5px;
+                    width: 80px;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+}
