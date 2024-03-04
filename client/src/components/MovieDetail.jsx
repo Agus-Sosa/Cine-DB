@@ -53,7 +53,7 @@ const MovieDetail = ({ movie }) => {
             </p><p>
               Año: <span>{movie.year}</span>
             </p><p>
-              Genero: <span>{movie.genre}</span>
+              Genero: <span> {movie.genre.join(', ')} </span>
             </p>
           </div>
 
