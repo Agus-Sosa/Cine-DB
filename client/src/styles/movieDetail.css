@@ -1,6 +1,19 @@
 
-.container_details_general {
+.background_details_movie {
+    padding: 300px 250px 0px 250px;
+    position: absolute;
+    left: 0;
+    width: -webkit-fill-available;
+    background-position: center;
+    height: 100%;
+}
 
+.container_details_general {
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+    max-width: 1250px;
+    margin: 9pc auto 0 auto;
     background-color: #131313;
     padding: 20px 40px 0px 30px;
 }
@@ -154,5 +167,126 @@
                 color: white;
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 945px) {
+    
+    .container_movie_details{
+        & .container_left_details {
+            & article {
+                & img {
+                    width: 250px;
+                }
+            }
+        }
+
+
+            & .container_right_details {
+            & h2 {
+                font-size: 30px;
+                font-weight: bold;
+        }
+
+
+        & .container_cast_movie {
+            & .top_details_cast {
+                & h3 {
+                    font-size: 20px;
+                }
+            }
+
+            & .card_cast_container {
+                & .actor-image-container {
+                   width: 170px;
+                   height: 170px;
+                }
+            }
+        }
+    }
+
+
+    & .container_left_details {
+        & .container_rating-share_movie {
+            font-size: 17px;
+        }
+    }
+    }
+
+    .p_synopsis_movie {
+                font-size: 16px;
+            }
+
+            .carrousel_buttons {
+                display: none;
+            }
+   
+}
+
+@media screen and (max-width:850px) {
+
+    .container_movie_details {
+
+
+         & .container_left_details {
+            & article {
+                & img {
+                    width: 200px;
+                }
+            }
+        }
+
+    & .container_right_details{
+
+        & h2 {
+            font-size: 23px;
+        }
+
+        & .container_cast_movie {
+
+            & .top_details_cast {
+                & h3 {
+                    font-size: 18px;
+                }
+            }
+
+            & .card_cast_container {
+                & .actor-image-container {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+        }
+
+
+        & .details_property_movie {
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    & .p_synopsis_movie {
+        font-size: 14px;
+    }
+}
+
+
+.container_carousel {
+    & h3 {
+        font-size: 15px;
+    }
+}
+
+}
+
+@media screen and (max-width: 639px) {
+    .container_details_general {
+        display: none;
+    }
+
+    .background_details_movie {
+        display: none;
     }
 }

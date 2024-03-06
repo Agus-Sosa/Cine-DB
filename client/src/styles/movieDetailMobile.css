@@ -1,0 +1,86 @@
+.container_details_general_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 639px) {
+    .container_details_general_mobile {
+        display: block;
+
+        & .container_image_details {
+            padding: 15px;
+            height: 469px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            & .container_image_info_top {
+                display: flex;
+                justify-content: space-between;
+                font-size: 28px;
+                align-items: center;
+            }
+
+            & .container_image_info_bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            
+                
+
+                & h1 {
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+                & p {
+                font-size: 25px;
+                    & svg {
+                        color: rgb(255, 230, 0);
+                        margin: 0px 10px;
+                    }
+                
+                    display: flex;
+                    align-items: center;
+
+                }
+            }
+        }
+
+
+        & .container_info_movie {
+            
+            padding: 15px;
+            color: white;
+            & .container_info_movie_top {
+                display: flex;
+                justify-content: space-between;
+                
+
+                & .hours_years_details {
+                    display: flex;
+                    & span {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            & .director_detail {
+                margin: 20px 0px;
+                & h3 {
+                    margin-bottom: 5px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    
+                }
+            }
+
+            & .synopsis_detail {
+                & h3 {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}

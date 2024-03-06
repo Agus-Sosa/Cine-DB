@@ -1,0 +1,5 @@
+export const PERSISTENCE_TYPES = {
+    MONGO: "MONGO",
+    FILESYSTEM: "FILESYSTEM",
+    MEMORY: "MEMORY",
+  };

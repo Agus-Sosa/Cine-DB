@@ -24,8 +24,15 @@ const MovieDetail = ({ movie }) => {
     }
   };
 
+  const containerStyle = {
+    backgroundImage: `url(${movie.backgroundImage})`,
+    backgroundSize: "cover",
+  }
+
+
   return (
     <>
+    <section className='background_details_movie' style={containerStyle}> </section>
     <section className='container_details_general'>
     <section className='container_movie_details'>
       <div className='container_left_details'>
@@ -94,6 +101,7 @@ const MovieDetail = ({ movie }) => {
         <MovieImagesCarousel movie={movie} />
     </section>
     </section>
+
     </>
   );
 };

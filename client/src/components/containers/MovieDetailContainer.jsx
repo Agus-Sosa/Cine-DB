@@ -3,6 +3,7 @@ import MovieDetail from '../MovieDetail'
 import { useParams } from 'react-router-dom'
 import { movies } from '../../temp/data';
 import Loader from '../Loader';
+import MovieDetailMobile from '../MovieDetailMobile';
 const MovieDetailContainer = () => {
   const {idMovie} = useParams();
   const [movie, setMovie]= useState(null);
@@ -29,21 +30,13 @@ const MovieDetailContainer = () => {
   }
 
 
-  // if(!movie){
-  //   return <h1>Cargando</h1>
-  // }
-
-
-  const containerStyle = {
-    backgroundImage: `url(${movie.backgroundImage})`,
-    backgroundSize: "cover",
-    padding: "300px 250px 0px 250px"
-  }
 
   return (
-    <section style={containerStyle}>
-      <MovieDetail movie={movie}/>
-    </section>
+      <>
+        <MovieDetail movie={movie}/>
+        <MovieDetailMobile movie={movie}/>
+      </>
+
     )
 }
 

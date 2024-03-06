@@ -16,7 +16,7 @@ export const movies = [
   {
     id: 2,
     title: "John Wick: Chapter 4",
-    director: "Director 2",
+    director: "Chad Stahelski",
     year: 2023,
     genre: ["Aventura", "Accion"],
     synopsis: "John Wick descubre un camino para derrotar a La Alta Mesa. Pero antes de que pueda ganar su libertad, Wick debe enfrentarse a un nuevo enemigo con poderosas alianzas en todo el mundo y fuerzas que convierten a viejos amigos en enemigos.",
