@@ -1,6 +1,6 @@
 import { MovieService } from "../services/movie.service.js";
 
-export class movieController {
+export class MovieController {
     static async getMovies (req, res) {
         try {
 

@@ -1,4 +1,6 @@
-import MovieManager from "../managers/mongo/movieManager";
+import FavoriteManager from "../managers/mongo/favoritesManager.js";
+import MovieManager from "../managers/mongo/movieManager.js";
+import UserManger from "../managers/mongo/userManager.js";
 import { PERSISTENCE_TYPES } from "./databaseConfig.js";
 import { connectDb } from "./dbConnection.js";
 
@@ -11,7 +13,8 @@ class dataBaseFactory {
                 connectDb();
                 return {
                     movieDao: new MovieManager(),
-                    
+                    userDao: new UserManger(),
+                    favoriteDao: new FavoriteManager(),
                 }
         
             default:
@@ -24,4 +27,4 @@ class dataBaseFactory {
 
 const db = dataBaseFactory.createPersistence(config.server.persistence);
 
-export const {movieDao}= db
+export const {movieDao, userDao, favoriteDao}= db;

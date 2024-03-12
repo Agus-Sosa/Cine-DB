@@ -24,5 +24,7 @@ herramientas
 *.sw?
 .vite
 
+
+# Solucionar el problema
 ImagesModal.jsx
 imagesModal.css
