@@ -13,6 +13,9 @@ class UserManger {
 
             userCreated.favorites = newFavorites.id;
             await userCreated.save();
+            return userCreated;
+
+            console.log(userCreated)
         } catch (error) {
             throw error;
         }

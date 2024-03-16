@@ -2,20 +2,22 @@ import React, { useState } from 'react'
 import InputComponent from './InputComponent'
 import '../styles/registerForm.css'
 import { IoLogoFacebook, IoLogoInstagram, IoLogoGoogle } from "react-icons/io";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa";
-
+import axios from 'axios';
+import { API_URL } from '../utils/config';
 
 import ImageCarousel from './ImageCarousel'
 
 const RegisterForm = () => {
-
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-        username: '',
+        user_name: '',
         email: '',
         password: '',
     })
+
 
     const handleChange = (e)=> {
         const {name, value} = e.target;
@@ -24,6 +26,23 @@ const RegisterForm = () => {
 
     const hanldeSubmit = async(e)=> {
         e.preventDefault();
+        
+        try {
+            const response =await axios.post(`http://localhost:8080/api/sessions/register`, formData, {
+                headers:{"Content-Type": 'application/json'},
+            })
+            const data = response.data
+            if(response.status == 200) {
+                console.log("Se registro correctamente", data);
+                navigate();
+            } else {
+                console.error("Error al registrarse", data);
+            }
+
+        } catch (error) {
+            console.error(`Error al registrarse ${error.message}`);
+            console.log(error)
+        }
     }
     return (
         <section className='container_form'>
@@ -36,13 +55,13 @@ const RegisterForm = () => {
                 <div className='form_container'>
                     <h1>¡Bienvenido de Nuevo!</h1>
                     <span>Nos alegra verte de nuevo. Ingresa para continuar tu viaje con nosotros</span>
-                    <form onSubmit={hanldeSubmit}>
+                    <form onSubmit={hanldeSubmit} >
                         <InputComponent 
                         label="Nombre de usuario"
                         type="text"
                         placeholder="Ingrese un nombre de usuario"
-                        value={formData.username}
-                        name="username"
+                        value={formData.user_name}
+                        name="user_name"
                         onChange={handleChange}
                         
                         />            

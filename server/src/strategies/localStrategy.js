@@ -2,8 +2,11 @@ import passport from 'passport'
 import LocalStrategy from 'passport-local';
 import { UserService } from '../services/user.service.js';
 import { createHash, isValidPassword } from '../utils.js';
-import { Strategy as GoogleStrategy } from 'passport-google-oauth2';
+
+
 export const initializePassport = () => {
+
+
     passport.use("registerStrategy", new LocalStrategy(
         {
             usernameField: "email",
@@ -19,8 +22,8 @@ export const initializePassport = () => {
                     return done(null)
                 }
 
-                const newUser  ={
-                    user_name: username,
+                const newUser ={
+                    user_name: user_name,
                     email: username,
                     password: createHash(password)
                 }
@@ -60,19 +63,7 @@ export const initializePassport = () => {
     ))
 
     
-        passport.use(new GoogleStrategy({
-            clientID:     GOOGLE_CLIENT_ID,
-            clientSecret: GOOGLE_CLIENT_SECRET,
-            callbackURL: "http://yourdomain:3000/auth/google/callback",
-            passReqToCallback   : true
-        },
-        function(request, accessToken, refreshToken, profile, done) {
-            User.findOrCreate({ googleId: profile.id }, function (err, user) {
-            return done(err, user);
-            });
-        }
-        ));
-
+ 
 
 
     

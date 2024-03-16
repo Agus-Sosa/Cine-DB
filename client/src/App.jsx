@@ -8,6 +8,7 @@ import MovieDetailContainer from "./components/containers/MovieDetailContainer";
 import LoginForm from "./components/LoginForm";
 import ExplorerPageContainer from "./components/containers/ExplorerPageContainer";
 import NotFound from "./components/NotFound";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={[<NavBar />, <MovieListConainer /> ]} />
           <Route path="/register" element={<RegisterForm/>}/>
-          <Route path="/movie/:idMovie" element={[<NavBar />, <MovieDetailContainer/> ]} />
           <Route path="/login" element={<LoginForm/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/movie/:idMovie" element={[<NavBar />, <MovieDetailContainer/> ]} />
           <Route path="/explorar" element={ [<NavBar/>,<ExplorerPageContainer/>]}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>

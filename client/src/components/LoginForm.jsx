@@ -24,6 +24,21 @@ const LoginForm = () => {
 
     const hanldeSubmit = async(e)=> {
         e.preventDefault();
+        try {
+            const response =await axios.post("/api/sessions/login", formData, {
+                headers:{"Content-Type": 'application/json'},
+            })
+            const data = response.data
+
+            if(response.status == 200) {
+                console.log("Se registro correctamente", data);
+            } else {
+                console.error("Error al registrarse", data);
+            }
+
+        } catch (error) {
+            console.error(`Error al registrarse ${error}`);
+        }
     }
     return (
         <section className='container_form'>
