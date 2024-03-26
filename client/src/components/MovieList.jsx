@@ -47,8 +47,9 @@ const MovieList = ({ title, movies}) => {
         }}
       >
         {movies.map((movie) => (
-          <SwiperSlide key={movie.id}>
+          <SwiperSlide key={movie._id}>
             <CardMovie movie={movie} />
+            {console.log(movies, "movies")}
           </SwiperSlide>
         ))}
       </Swiper>

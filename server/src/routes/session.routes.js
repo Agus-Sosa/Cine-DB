@@ -5,13 +5,18 @@ import passport from "passport";
 const router = Router();
 
 router.post("/register", passport.authenticate("registerStrategy", {
-    failureRedirect: "/api/sessions/fall-register",
 
 }))
+
+router.get('/fall-register', SessionController.fallRegister );
+
 
 router.post("/login", passport.authenticate("loginStrategy", {
     failureRedirect: "/api/sessions/fall-login",
 }))
+
+
+router.get("/fall-login", SessionController.fallLogin);
 
 
 router.post('/logout', SessionController.logOut);

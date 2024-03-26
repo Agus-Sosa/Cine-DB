@@ -31,13 +31,13 @@ const LoginForm = () => {
             const data = response.data
 
             if(response.status == 200) {
-                console.log("Se registro correctamente", data);
+                console.log("Se inicio sesion correctamente", data);
             } else {
-                console.error("Error al registrarse", data);
+                console.error("Error al iniciar sesion", data);
             }
 
         } catch (error) {
-            console.error(`Error al registrarse ${error}`);
+            console.error(`Error al iniciar sesion ${error}`);
         }
     }
     return (

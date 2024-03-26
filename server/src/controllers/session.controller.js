@@ -11,6 +11,15 @@ export class SessionController {
     }
 
 
+    static fallRegister(req,res) {
+        res.status(401).json({status:"error", message:"Error al registrar el usuario"})
+    }
+
+    static fallLogin (req, res) {
+        res.status(401).json({status: "error", message: "Error al iniciar sesion"})
+    }
+
+
     static logOut (req, res) {
         req.session.destroy((err)=> {
             if(err) {

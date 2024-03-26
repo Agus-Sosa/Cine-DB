@@ -43,8 +43,8 @@ const CardMovie = ({movie}) => {
     }
 
     return (
-<Link to={`/movie/${movie.id}`}>
-            <div className={`card ${isHovered ? 'hovered' : ''}`}
+<Link to={`/movie/${movie._id}`}>
+            <div key={movie._id} className={`card ${isHovered ? 'hovered' : ''}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             

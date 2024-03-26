@@ -42,7 +42,7 @@ const SearchMovies = ({movies}) => {
                 <h3>Sugerencias</h3>
                 <ul>
                     {suggesteMovies.map(movie =>(
-                        <Link to={`/movie/${movie.id}`}>
+                        <Link to={`/movie/${movie._id}`}>
                           <div className='search_result_item'>
                               <div className='search-result_image_container'>
                                 <picture>

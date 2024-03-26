@@ -14,7 +14,7 @@ const MovieDetailMobile = ({movie}) => {
 
     return (
         <section className='container_details_general_mobile'>
-        <div className='container_image_details' style={containerStyle}>
+        <div className='container_image_details' style={containerStyle} key={movie._id}>
         <div className='container_image_info_top'>
             <button><IoAddSharp/></button>
             <a href=""><IoShareSocialSharp/></a>

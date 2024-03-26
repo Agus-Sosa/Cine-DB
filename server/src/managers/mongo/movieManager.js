@@ -45,6 +45,15 @@ class MovieManager {
         }
     }
 
+
+    async findMovieByTitle (title){ 
+        try {
+            const movie =await this.model.findOne({title});
+            return movie;
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 

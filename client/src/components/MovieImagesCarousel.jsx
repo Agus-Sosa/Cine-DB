@@ -25,23 +25,23 @@ const MovieImagesCarousel = ({movie}) => {
                 }
             };
 
-            const openModal = (images, index) => {
-                console.log("Before openModal - images:", images);
-                console.log("Before openModal - index:", index);
+            // const openModal = (images, index) => {
+            //     console.log("Before openModal - images:", images);
+            //     console.log("Before openModal - index:", index);
               
-                if (images && images.length > 0 && index !== undefined) {
-                  setModalOpen(true);
-                  setModalImages(images);
-                  setInitialSlide(index);
-                } else {
-                  console.error("Invalid images or index provided.");
-                }
-              };
+            //     if (images && images.length > 0 && index !== undefined) {
+            //       setModalOpen(true);
+            //       setModalImages(images);
+            //       setInitialSlide(index);
+            //     } else {
+            //       console.error("Invalid images or index provided.");
+            //     }
+            //   };
               
 
-            const closeModal = () => {
-                setModalOpen(false)
-            }
+            // const closeModal = () => {
+            //     setModalOpen(false)
+            // }
 
 
     return (
@@ -64,14 +64,12 @@ const MovieImagesCarousel = ({movie}) => {
             }}
             >
             {movie.gallery.map((images, index)=> (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={movie._id} >
                     <div className='container-images'>
                         <img 
                         src={images.url} 
                         alt="" 
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        onClick={() => openModal(movie.gallery, index)}
-
                         />
                     </div>
                 </SwiperSlide>
@@ -81,9 +79,7 @@ const MovieImagesCarousel = ({movie}) => {
 
         </div>
     </div>
-    {modalOpen && (
-        <ImagesModal images={modalImages} closeModal={closeModal} initialSlide={initialSlide} />
-            )}
+
     </>
         )
 }

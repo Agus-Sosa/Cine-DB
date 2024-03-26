@@ -5,16 +5,20 @@ export class MovieService {
         return await movieDao.getMovies();
     }
 
-    static async deleteMovie() {
+    static async deleteMovie(movieId) {
         return await movieDao.deleteMovie();
     }
 
-    static async getMovieById () {
-        return await movieDao.getMovieById();
+    static async getMovieById (movieId) {
+        return await movieDao.getMovieById(movieId);
     }
 
-    static async addNewMovie () {
-        return await movieDao.addNewMovie();
+    static async addNewMovie (newMovie) {
+        return await movieDao.addNewMovie(newMovie);
+    }
+
+    static async findMovieByTitle (title) {
+        return await movieDao.findMovieByTitle(title)
     }
 }
 

@@ -28,19 +28,20 @@ const RegisterForm = () => {
         e.preventDefault();
         
         try {
-            const response =await axios.post(`http://localhost:8080/api/sessions/register`, formData, {
+            const response =await axios.post(`http://localhost:8080/api/sessions/register`, JSON.stringify(formData), {
+                method:"POST",
                 headers:{"Content-Type": 'application/json'},
+
             })
             const data = response.data
             if(response.status == 200) {
                 console.log("Se registro correctamente", data);
-                navigate();
+                navigate('/login');
             } else {
-                console.error("Error al registrarse", data);
+                console.error("Error al registrarse", response.data);
             }
 
         } catch (error) {
-            console.error(`Error al registrarse ${error.message}`);
             console.log(error)
         }
     }
@@ -55,7 +56,7 @@ const RegisterForm = () => {
                 <div className='form_container'>
                     <h1>¡Bienvenido de Nuevo!</h1>
                     <span>Nos alegra verte de nuevo. Ingresa para continuar tu viaje con nosotros</span>
-                    <form onSubmit={hanldeSubmit} >
+                    <form onSubmit={hanldeSubmit} method='post' encType='multipart/form-data'>
                         <InputComponent 
                         label="Nombre de usuario"
                         type="text"

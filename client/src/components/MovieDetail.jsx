@@ -29,11 +29,11 @@ const MovieDetail = ({ movie }) => {
     backgroundSize: "cover",
   }
 
-
+console.log(movie," detail movie")
   return (
     <>
-    <section className='background_details_movie' style={containerStyle}> </section>
-    <section className='container_details_general'>
+    <section className='background_details_movie' style={containerStyle} > </section>
+    <section className='container_details_general' key={movie._id}>
     <section className='container_movie_details'>
       <div className='container_left_details'>
           <article>
@@ -82,7 +82,7 @@ const MovieDetail = ({ movie }) => {
               
           >
             {movie.actors.map((actors, index)=> (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={movie._id}>
               <div className='card_cast_container'>
                 <div className='actor-image-container'>
                 <img src={actors.image} alt={actors.name} />

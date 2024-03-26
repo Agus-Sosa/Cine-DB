@@ -1,4 +1,4 @@
-import React, {useRef}  from 'react'
+import React from 'react'
 import '../styles/movieListMobile.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,24 +6,8 @@ import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import CardMovie from './CardMovie';
-import CarouselButtons from './CarouselButtons';
 
 const MovieListMobile = ({title, movies}) => {
-    const swiperRef = useRef(null);
-
-  const handlePrevClick = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
-
-  const handleNextClick = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
-
-
     return (
         <div className="container_list_mobile">
         <div className="top_list_container_mobile">
@@ -32,7 +16,7 @@ const MovieListMobile = ({title, movies}) => {
             </div>
         </div>
         <Swiper
-            ref={swiperRef}
+            
             modules={[Navigation, Virtual, Pagination]}
             slidesPerView={2}
             // width={1000}
@@ -44,7 +28,7 @@ const MovieListMobile = ({title, movies}) => {
             }}
         >
             {movies && movies.map((movie) => (
-        <SwiperSlide key={movie.id}>
+        <SwiperSlide key={movie._id}>
         <CardMovie movie={movie} />
         </SwiperSlide>
     ))}

@@ -18,10 +18,38 @@ export class MovieController {
             const mid = req.params.mid;
             const getMovie = await MovieService.getMovieById(mid);
 
-            res.status(200).json({status: "success", getMovie});
+
+            if(!getMovie) {
+                res.status(400).json({status: "error", message: "La pelicula no existe"})
+            }
+
+            return  res.status(200).json({status: "success", getMovie});
 
         } catch (error) {
             res.status(404).json({status: "error", message: `Error al obtener la pelicula ${error}`})
+        }
+    }
+
+
+    static async createNewMovie (req, res) {
+        try {
+            const newMovie = req.body 
+
+            const existingMovie = await MovieService.findMovieByTitle(newMovie.title);
+
+
+            if(existingMovie) {
+                return res.status(400).json({status: "error", message: `La pelicula ${newMovie.title} ya existe`});
+            }
+
+
+            const movie = await MovieService.addNewMovie(newMovie);
+
+            res.status(200).json({status:"success", message: "Pelicula creada correctamente", movie: movie});
+
+        } catch (error) {
+            res.status(404).json({status: "Error" , message: "Error al crear el producto" })
+            console.log(error)
         }
     }
 
@@ -34,4 +62,7 @@ export class MovieController {
             res.status(404).json({status: "error", message: `Error al eliminar la pelicula ${error}`})
         }
     }
+
+
+
 }

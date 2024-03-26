@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/navBar.css";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem , Input} from "@nextui-org/react";
 import { Link as NextUILink } from "@nextui-org/react";
 import '../styles/navbar.css'
 import SearchMovies from "./SearchMovies";
-import { movies } from "../temp/data";
+// import { movies } from "../temp/data";
 import SearchMovieMobile from "./SearchMovieMobile";
+import axios from "axios";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [movies, setMovies] = useState();
+
+
+  useEffect(()=> {
+    const axiosData = async()=> {
+      try {
+        const response = await axios.get("http://localhost:8080/api/movies/");
+        setMovies(response.data.movies);
+      
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    axiosData();
+  },[])
+
 
   const menuItems = [
     "Inicio",
