@@ -18,7 +18,7 @@ export const isValidPassword = (userDb, password) => {
 
 export const checkValidFiels = (body)=> {
     const {user_name, email, password} = body;
-    if(!user_name || !email || password) {
+    if(!user_name || !email || !password) {
         return false;
     }
     return true;

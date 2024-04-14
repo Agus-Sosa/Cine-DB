@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import InputComponent from './InputComponent'
 import '../styles/registerForm.css'
 import { IoLogoFacebook, IoLogoInstagram, IoLogoGoogle } from "react-icons/io";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa";
-
-
 import ImageCarousel from './ImageCarousel'
+import axios from 'axios';
+import { useAuth } from '../context/AuthContext';
 
-const LoginForm = () => {
-
+const LoginForm = ({onLogin}) => {
+    const navigate = useNavigate();
+    const {signIn, user} = useAuth();
 
     const [formData, setFormData] = useState({
         username: '',
@@ -22,24 +23,36 @@ const LoginForm = () => {
         setFormData((prevData)=> ({...prevData, [name]: value}));
     }
 
-    const hanldeSubmit = async(e)=> {
-        e.preventDefault();
-        try {
-            const response =await axios.post("/api/sessions/login", formData, {
-                headers:{"Content-Type": 'application/json'},
-            })
-            const data = response.data
+   const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // try {
+    //     const response = await axios.post('http://localhost:8080/api/sessions/login', formData);
+    //     const data = response.data;
+    //     if (data.success) {
+    //         onLogin();  
+    //         console.log("datos de usuario", data.user)
+    //         navigate('/')   
+    //         // Aquí puedes manejar la navegación a la página principal de tu aplicación
+    //     } else {
+    //         alert("Error al iniciar sesion")
+    //         // Aquí puedes mostrar un mensaje de error al usuario, por ejemplo, usando un estado en React
+    //     }
+    // } catch (error) {
+    //     console.error("Error en el inicio de sesión:", error);
+    // }
 
-            if(response.status == 200) {
-                console.log("Se inicio sesion correctamente", data);
-            } else {
-                console.error("Error al iniciar sesion", data);
-            }
 
-        } catch (error) {
-            console.error(`Error al iniciar sesion ${error}`);
-        }
+    try {
+      await signIn(formData);        
+      onLogin();
+        // navigate('/');
+    } catch (error) {
+        console.error(`Error en el inicio de sesion ${error}`);
+        
     }
+};
+
     return (
         <section className='container_form'>
             <div className='container_nav_form'>
@@ -51,7 +64,7 @@ const LoginForm = () => {
                 <div className='form_container'>
                     <h1>¡Bienvenido de Nuevo!</h1>
                     <span>Nos alegra verte de nuevo. Ingresa para continuar tu viaje con nosotros</span>
-                    <form onSubmit={hanldeSubmit}>      
+                    <form onSubmit={handleSubmit} encType='multipart/form-data' method='post'>      
                         <InputComponent 
                         label="Correo Electronico"
                         type="email"

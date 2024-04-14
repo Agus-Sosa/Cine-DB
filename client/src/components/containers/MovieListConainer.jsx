@@ -6,6 +6,7 @@ import MovieListMobile from "../MovieListMobile";
 import '../../styles/movieListContainer.css'
 import CoverPageMobile from "../CoverPageMobile";
 import axios from 'axios'
+import Loader from "../Loader";
 const MovieListConainer = () => {
 const [loading, setLoading]= useState(true)
 const [movies, setMovies] = useState([])
@@ -30,8 +31,9 @@ const [movies, setMovies] = useState([])
     axiosData();
   }, [])
 
-
-
+  if(loading) {
+    return <Loader/>
+  }
 
   return (
     <> 

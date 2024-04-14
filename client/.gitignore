@@ -28,3 +28,9 @@ herramientas
 # Solucionar el problema
 ImagesModal.jsx
 imagesModal.css
+AuthContext.jsx
+LoginForm.jsx
+RegisterForm.jsx
+Favorites.jsx
+ProtectedRoute.jsx
+Profile.jsx

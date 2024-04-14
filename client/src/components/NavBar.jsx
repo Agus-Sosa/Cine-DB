@@ -14,6 +14,8 @@ const NavBar = () => {
   const [movies, setMovies] = useState();
 
 
+
+
   useEffect(()=> {
     const axiosData = async()=> {
       try {
@@ -66,7 +68,8 @@ const NavBar = () => {
         <SearchMovies movies={movies}/>
       </NavbarContent>
       <NavbarContent justify="end">
-        <ReactRouterLink to={'/login'}>
+      
+        <ReactRouterLink to={'*'}>
         <NavbarItem className="hidden login_button lg:flex">
           <NextUILink >Iniciar Sesion</NextUILink>
         </NavbarItem>
@@ -74,14 +77,16 @@ const NavBar = () => {
         <NavbarItem>
           <SearchMovieMobile movies={movies}/>
         </NavbarItem>
-        <ReactRouterLink to={'/register'}>
+        <ReactRouterLink to={'*'}>
         <NavbarItem className="register_button">
           <Button  color="primary" href="#" variant="flat">
               Registrarse
           </Button>
         </NavbarItem>
         </ReactRouterLink>
+
       </NavbarContent>
+    
       <NavbarMenu>
       <ReactRouterLink to={'/'}>
         <NavbarItem>Inicio</NavbarItem>

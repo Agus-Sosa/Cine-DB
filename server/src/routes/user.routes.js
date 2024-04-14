@@ -5,5 +5,5 @@ const router = Router();
 
 
 router.post("/favorites/add/:movieId", UserController.addFavorites);
-
+router.get("/user/:uid", UserController.getUserById)
 export {router as UserRouter};

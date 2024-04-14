@@ -130,3 +130,12 @@ export const frontPage =
     trailerLink: 'https://www.youtube.com/embed/shW9i6k8cB0?si=ayovg1BeQpJoR_Fr',
     year: 2023
   }
+
+
+
+  export const profileFront =  {
+    user_name: "Agus31",
+    email:"agus@gmail.com",
+    password:"111",
+    avatar: "https://pbs.twimg.com/media/E6qJWI6XIAEq-BY.jpg"
+  }

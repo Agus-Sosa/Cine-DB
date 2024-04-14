@@ -8,9 +8,11 @@ import axios from 'axios';
 import { API_URL } from '../utils/config';
 
 import ImageCarousel from './ImageCarousel'
+import { useAuth } from '../context/AuthContext';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
+    const {signUp} = useAuth();
 
     const [formData, setFormData] = useState({
         user_name: '',
@@ -26,23 +28,29 @@ const RegisterForm = () => {
 
     const hanldeSubmit = async(e)=> {
         e.preventDefault();
+        // try {
         
+        //     const response =await axios.post('http://localhost:8080/api/sessions/register', formData, {
+        //     })
+        
+        //     const data = response.data
+        //     if(data.success){
+        //         alert(`Se registro con exito`)
+        //         signUp(data.user);
+        //         console.log("usuario creado", data.user);
+        //         navigate("/login")
+
+        //     }
+
+        // } catch (error) {
+        //     console.log(error)
+        // }
+
         try {
-            const response =await axios.post(`http://localhost:8080/api/sessions/register`, JSON.stringify(formData), {
-                method:"POST",
-                headers:{"Content-Type": 'application/json'},
-
-            })
-            const data = response.data
-            if(response.status == 200) {
-                console.log("Se registro correctamente", data);
-                navigate('/login');
-            } else {
-                console.error("Error al registrarse", response.data);
-            }
-
+            await signUp(formData);
+            navigate("/login");
         } catch (error) {
-            console.log(error)
+            console.error(`Error al crearse el usuario ${error}`);
         }
     }
     return (

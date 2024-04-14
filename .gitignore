@@ -1,2 +1,11 @@
 notas.txt
 .env
+server/src/controllers/session.controller.js
+server/src/controllers/favorite.controller.js
+server/src/controllers/user.controller.js
+server/src/services/user.service.js
+server/src/services/favorite.service.js
+server/src/managers/mongo/favoritesManager.js
+server/src/managers/mongo/userManager.js
+server/src/models/favoriteModel.js
+server/src/models/userModel.js

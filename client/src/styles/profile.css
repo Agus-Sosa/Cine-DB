@@ -1,0 +1,134 @@
+
+
+
+.container_navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: #AF0404;
+    & svg {
+        margin: 0px 5px;
+    }
+
+}
+
+.container_account {
+    box-shadow: rgb(0, 0, 0) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin: 2pc 17pc;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.header_account {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.container_details_account {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+    & .container_image {
+        display: flex;
+        justify-content: center;
+        & .button_change_avatar {
+            background-color: #AF0404;
+            position: absolute;
+            bottom: -4px;
+            right: -7px;
+            padding: 13px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            transition: .5s all;
+            &:hover {
+                background-color: #7e0b0b;
+            }
+        }
+        & article {
+            width: 230px;
+            position: relative;
+        }
+        & img {
+            width: 100%;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.74) 0px 6px 12px -2px, rgba(0, 0, 0, 0.856) 0px 3px 7px -3px;
+        }
+    }
+
+    & .buttons-container  {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0px 0px 0px;
+        color: white;
+        & button {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        & .save_changes_button {
+            background-color: #AF0404;
+        }
+
+
+        & .logout_button {
+            background-color: #444242;
+
+        }
+    }
+}
+
+
+@media screen and (max-width: 1004px) {
+    .container_account {
+        margin: 2pc 3pc;
+    }
+}
+
+@media screen and (max-width: 523px) {
+
+    .container_navbar {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .container_account {
+        margin: 0px 15px;
+        padding: 0px;
+        box-shadow: none;
+    }
+
+
+    .container_details_account {
+        & form {
+            width: -webkit-fill-available;
+        }
+
+        & .input_container {
+            & input {
+                width: auto;
+            }
+        }
+        & .container_image {
+            margin: auto;
+            & article {
+                width: 167px;
+            }
+        }
+    
+        & .buttons-container {
+            flex-direction: column;
+            & button {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
