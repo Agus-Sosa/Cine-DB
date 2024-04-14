@@ -68,25 +68,8 @@ const NavBar = () => {
         <SearchMovies movies={movies}/>
       </NavbarContent>
       <NavbarContent justify="end">
-      
-        <ReactRouterLink to={'*'}>
-        <NavbarItem className="hidden login_button lg:flex">
-          <NextUILink >Iniciar Sesion</NextUILink>
-        </NavbarItem>
-        </ReactRouterLink>
-        <NavbarItem>
-          <SearchMovieMobile movies={movies}/>
-        </NavbarItem>
-        <ReactRouterLink to={'*'}>
-        <NavbarItem className="register_button">
-          <Button  color="primary" href="#" variant="flat">
-              Registrarse
-          </Button>
-        </NavbarItem>
-        </ReactRouterLink>
-
       </NavbarContent>
-    
+  
       <NavbarMenu>
       <ReactRouterLink to={'/'}>
         <NavbarItem>Inicio</NavbarItem>
