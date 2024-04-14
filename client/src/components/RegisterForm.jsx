@@ -4,15 +4,11 @@ import '../styles/registerForm.css'
 import { IoLogoFacebook, IoLogoInstagram, IoLogoGoogle } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa";
-import axios from 'axios';
-import { API_URL } from '../utils/config';
-
 import ImageCarousel from './ImageCarousel'
 import { useAuth } from '../context/AuthContext';
 
 const RegisterForm = () => {
-    const navigate = useNavigate();
-    const {signUp} = useAuth();
+   
 
     const [formData, setFormData] = useState({
         user_name: '',
@@ -26,33 +22,7 @@ const RegisterForm = () => {
         setFormData((prevData)=> ({...prevData, [name]: value}));
     }
 
-    const hanldeSubmit = async(e)=> {
-        e.preventDefault();
-        // try {
-        
-        //     const response =await axios.post('http://localhost:8080/api/sessions/register', formData, {
-        //     })
-        
-        //     const data = response.data
-        //     if(data.success){
-        //         alert(`Se registro con exito`)
-        //         signUp(data.user);
-        //         console.log("usuario creado", data.user);
-        //         navigate("/login")
-
-        //     }
-
-        // } catch (error) {
-        //     console.log(error)
-        // }
-
-        try {
-            await signUp(formData);
-            navigate("/login");
-        } catch (error) {
-            console.error(`Error al crearse el usuario ${error}`);
-        }
-    }
+   
     return (
         <section className='container_form'>
             <div className='container_nav_form'>

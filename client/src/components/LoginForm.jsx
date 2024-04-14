@@ -5,10 +5,9 @@ import { IoLogoFacebook, IoLogoInstagram, IoLogoGoogle } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa";
 import ImageCarousel from './ImageCarousel'
-import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
-const LoginForm = ({onLogin}) => {
+const LoginForm = () => {
     const navigate = useNavigate();
     const {signIn, user} = useAuth();
 
@@ -23,35 +22,6 @@ const LoginForm = ({onLogin}) => {
         setFormData((prevData)=> ({...prevData, [name]: value}));
     }
 
-   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // try {
-    //     const response = await axios.post('http://localhost:8080/api/sessions/login', formData);
-    //     const data = response.data;
-    //     if (data.success) {
-    //         onLogin();  
-    //         console.log("datos de usuario", data.user)
-    //         navigate('/')   
-    //         // Aquí puedes manejar la navegación a la página principal de tu aplicación
-    //     } else {
-    //         alert("Error al iniciar sesion")
-    //         // Aquí puedes mostrar un mensaje de error al usuario, por ejemplo, usando un estado en React
-    //     }
-    // } catch (error) {
-    //     console.error("Error en el inicio de sesión:", error);
-    // }
-
-
-    try {
-      await signIn(formData);        
-      onLogin();
-        // navigate('/');
-    } catch (error) {
-        console.error(`Error en el inicio de sesion ${error}`);
-        
-    }
-};
 
     return (
         <section className='container_form'>
@@ -64,7 +34,7 @@ const LoginForm = ({onLogin}) => {
                 <div className='form_container'>
                     <h1>¡Bienvenido de Nuevo!</h1>
                     <span>Nos alegra verte de nuevo. Ingresa para continuar tu viaje con nosotros</span>
-                    <form onSubmit={handleSubmit} encType='multipart/form-data' method='post'>      
+                    <form encType='multipart/form-data' method='post'>      
                         <InputComponent 
                         label="Correo Electronico"
                         type="email"
