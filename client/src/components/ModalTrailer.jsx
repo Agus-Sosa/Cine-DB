@@ -3,12 +3,11 @@ import '../styles/modalTrailer.css'
 const ModalTrailer = ({videoUrl}) => {
 
 
-
         return (
             <>
-            <button className=" bg-slate-100 button_open text-black" onClick={()=>document.getElementById('my_modal_4').showModal()}> Ver trailer</button>
+            <button className="button_open_modal p-2  text-black" onClick={()=>document.getElementById('my_modal_4').showModal()}> Ver trailer</button>
             <dialog id="my_modal_4" className="modal">
-            <div className="modal-box w-11/12 max-w-fit bg-stone-900">
+            <div className="modal-box w-auto max-w-fit bg-stone-900">
                 <iframe
                     width="800"
                     height="500"

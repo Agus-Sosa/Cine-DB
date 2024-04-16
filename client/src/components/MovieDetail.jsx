@@ -29,7 +29,6 @@ const MovieDetail = ({ movie }) => {
     backgroundSize: "cover",
   }
 
-console.log(movie," detail movie")
   return (
     <>
     <section className='background_details_movie' style={containerStyle} > </section>
@@ -45,7 +44,6 @@ console.log(movie," detail movie")
           </div>
           <div className='container_trailer_details'>
             <ModalTrailer videoUrl={movie.trailerLink} />
-            <button className='button_add_favorites'>Agregar a favoritos</button>
           </div>
       </div>
       <div className='container_right_details'>

@@ -57,7 +57,15 @@ const NavBar = () => {
             Inicio
           </NextUILink>
         </NavbarItem>
+        
         </ReactRouterLink>
+        <ReactRouterLink to={'/generos'}>
+        <NavbarItem isActive className="explore_button">
+          <NextUILink>
+            Generos
+          </NextUILink>
+        </NavbarItem>
+        </ReactRouterLink>  
         <ReactRouterLink to={'/explorar'}>
         <NavbarItem isActive className="explore_button">
           <NextUILink>
@@ -65,9 +73,11 @@ const NavBar = () => {
           </NextUILink>
         </NavbarItem>
         </ReactRouterLink>  
-        <SearchMovies movies={movies}/>
+      
       </NavbarContent>
+      
       <NavbarContent justify="end">
+      <SearchMovies movies={movies}/>
       </NavbarContent>
   
       <NavbarMenu>

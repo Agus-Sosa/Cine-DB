@@ -7,7 +7,7 @@ import '../../styles/movieListContainer.css'
 import CoverPageMobile from "../CoverPageMobile";
 import axios from 'axios'
 import Loader from "../Loader";
-const MovieListConainer = () => {
+const HomeConainer = () => {
 const [loading, setLoading]= useState(true)
 const [movies, setMovies] = useState([])
 
@@ -62,4 +62,4 @@ const [movies, setMovies] = useState([])
   );
 };
 
-export default MovieListConainer;
+export default HomeConainer;

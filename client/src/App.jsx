@@ -2,20 +2,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import MovieListConainer from "./components/containers/MovieListConainer";
-import MovieDetailContainer from "./components/containers/MovieDetailContainer";
-import ExplorerPageContainer from "./components/containers/ExplorerPageContainer";
+import MovieDetailContainer from "./components/pages/MovieDetailContainer";
 import NotFound from "./components/NotFound";
+import ExploreContainer from "./components/pages/ExploreContainer";
+import GenreContainer from "./components/pages/GenreContainer";
+import HomeConainer from "./components/pages/HomeConainer";
 function App() {
  
   return (
     <>
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={[<NavBar/>, <MovieListConainer /> ]} />
+            <Route path="/" element={[<NavBar/>, <HomeConainer /> ]} />
             <Route path="*" element={<NotFound/>}/>         
               <Route path="/movie/:idMovie" element={[<NavBar />, <MovieDetailContainer/> ]} />
-              <Route path="/explorar" element={ [<NavBar/>,<ExplorerPageContainer/>]}/>
+              <Route path="/generos" element={ [<NavBar/>,<GenreContainer/>]}/>
+              <Route path="/explorar" element={[<NavBar/> ,<ExploreContainer/>]}/>
           </Routes>
           <Footer />
         </BrowserRouter>

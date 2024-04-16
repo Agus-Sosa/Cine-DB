@@ -5,8 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import CardMovie from './CardMovie';
-
+import MovieCard from './MovieCard';
 const MovieListMobile = ({title, movies}) => {
     return (
         <div className="container_list_mobile">
@@ -29,7 +28,7 @@ const MovieListMobile = ({title, movies}) => {
         >
             {movies && movies.map((movie) => (
         <SwiperSlide key={movie._id}>
-        <CardMovie movie={movie} />
+        <MovieCard movie={movie} />
         </SwiperSlide>
     ))}
         </Swiper>

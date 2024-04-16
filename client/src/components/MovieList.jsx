@@ -5,7 +5,7 @@ import { Virtual, Navigation, Pagination } from 'swiper/modules';
 
 
 import 'swiper/css/navigation';
-import CardMovie from './CardMovie';
+import MovieCard from './MovieCard';
 import '../styles/movieList.css';
 import CarouselButtons from './CarouselButtons';
 
@@ -48,7 +48,7 @@ const MovieList = ({ title, movies}) => {
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie._id}>
-            <CardMovie movie={movie} />
+            <MovieCard movie={movie} />
             {console.log(movies, "movies")}
           </SwiperSlide>
         ))}
