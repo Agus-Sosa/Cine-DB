@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../styles/navBar.css";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem , Input} from "@nextui-org/react";
 import { Link as NextUILink } from "@nextui-org/react";
-import '../styles/navbar.css'
 import SearchMovies from "./SearchMovies";
-// import { movies } from "../temp/data";
-import SearchMovieMobile from "./SearchMovieMobile";
 import axios from "axios";
+import styles from '../styles/navBar.module.css'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -37,7 +34,8 @@ const NavBar = () => {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <>
+    <Navbar style={{zIndex:10000000}} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -60,14 +58,14 @@ const NavBar = () => {
         
         </ReactRouterLink>
         <ReactRouterLink to={'/generos'}>
-        <NavbarItem isActive className="explore_button">
+        <NavbarItem isActive className={styles.explore_button}>
           <NextUILink>
             Generos
           </NextUILink>
         </NavbarItem>
         </ReactRouterLink>  
         <ReactRouterLink to={'/explorar'}>
-        <NavbarItem isActive className="explore_button">
+        <NavbarItem isActive className={styles.explore_button}>
           <NextUILink>
             Explorar
           </NextUILink>
@@ -78,6 +76,7 @@ const NavBar = () => {
       
       <NavbarContent justify="end">
       <SearchMovies movies={movies}/>
+
       </NavbarContent>
   
       <NavbarMenu>
@@ -85,11 +84,11 @@ const NavBar = () => {
         <NavbarItem>Inicio</NavbarItem>
       </ReactRouterLink>
 
-      <ReactRouterLink to={'/explorar'}>
-        <NavbarItem>Explorar</NavbarItem>
-      </ReactRouterLink>
+    
       </NavbarMenu>
+
     </Navbar>
+    </>
   );
 };
 

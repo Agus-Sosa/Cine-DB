@@ -2,6 +2,7 @@ import express from 'express'
 import { config } from './config/config.js';
 import { MovieRouter } from './routes/movie.routes.js';
 import cors from 'cors';
+import { FrontPageMovieRouter } from './routes/frontPageMovie.routes.js';
 
 const PORT = config.server.port
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 // Rutas 
+app.use("/api/frontPage", FrontPageMovieRouter)
 app.use("/api/movies", MovieRouter);
 
 app.listen(PORT, ()=> console.log(`Server Up in ${PORT}`))

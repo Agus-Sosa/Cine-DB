@@ -5,9 +5,13 @@ const ExploreContainer = () => {
         
     })
   return (
-    <section>
-
+    <>
+    <section> 
+      <div>
+        <h1>Explorar</h1>
+      </div>
     </section>
+    </>
 )
 }
 

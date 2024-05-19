@@ -18,6 +18,10 @@ const movieSchema =new mongoose.Schema({
     trailerLink: {type:String, required: true},
     image:{type:String, required: true},
     backgroundImage: {type:String, required: true},
+    isPopular: {type: Boolean, required: true},
+    isLatest: {type: Boolean, required: true},
+    isTopRated: {type: Boolean, required: true},
+    isFeatured: {type: Boolean, required: true, default: false}
 })
 
 

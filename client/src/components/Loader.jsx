@@ -1,13 +1,13 @@
 import React from 'react'
-import '../styles/loader.css'
+import style from '../styles/loader.module.css'
 const Loader = () => {
   return (
-    <section className='loader_container'>
-    <div class="loader">
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
+    <section style={{zIndex:10000000}} className={style.loader_container}>
+    <div class={style.loader}>
+  <div class={style.box}></div>
+  <div class={style.box}></div>
+  <div class={style.box}></div>
+  <div class={style.box}></div>
 </div>
 
   </section>

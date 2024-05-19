@@ -1,0 +1,35 @@
+
+.content_home {
+    
+}
+
+.movie-list_mobile_container {
+    display: none;
+}
+
+
+.cover-page_mobile_container {
+    display: none;
+}
+
+@media screen and (max-width:930px) {
+    .movie-list_mobile_container {
+        display: block;
+    }
+
+    .movie-list_desktop_container {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 850px) {
+    .cover-page_mobile_container {
+        display: block;
+    }
+
+    .cover-page_desktop_container {
+        display: none;
+    }
+    
+}

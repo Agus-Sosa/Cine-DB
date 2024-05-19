@@ -1,0 +1,12 @@
+
+
+.explore_button {
+  & a {
+    color:#cb0303 ;
+  }
+}
+
+.input_search {
+  border-radius: 10px;
+  border: solid 1px ;
+}

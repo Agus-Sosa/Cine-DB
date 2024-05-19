@@ -4,14 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../styles/movieImageCarousel.css'
-import CarouselButtons from './CarouselButtons';
-import '../styles/carouselButtons.css'
-import { ImagesModal } from './ImagesModal';
+// import CarouselButtons from './CarouselButtons';
 const MovieImagesCarousel = ({movie}) => {
-    const [modalOpen, setModalOpen] = useState(false);
-    const [modalImages, setModalImages] = useState([]);
-    const [initialSlide, setInitialSlide] = useState(0); // Nuevo estado para el índice inicial
-
         const swiperRef = React.useRef(null);
         const handlePrevClick = () => {
         if (swiperRef.current && swiperRef.current.swiper) {
@@ -49,7 +43,7 @@ const MovieImagesCarousel = ({movie}) => {
         <div className='container_carousel'>
         <div className='container_nav_carousel_image'>
         <h3 className='images_title'>Imagenes</h3>
-        <CarouselButtons onPrevClick={handlePrevClick} onNextClick={handleNextClick}/>
+        {/* <CarouselButtons onPrevClick={handlePrevClick} onNextClick={handleNextClick}/> */}
         <div className='container_images_carousel'>
         <Swiper
             ref={swiperRef}

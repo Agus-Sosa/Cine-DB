@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
-import '../styles/modalTrailer.css'
+import styles from '../styles/modalTrailer.module.css'
 const ModalTrailer = ({videoUrl}) => {
 
 
         return (
             <>
-            <button className="button_open_modal p-2  text-black" onClick={()=>document.getElementById('my_modal_4').showModal()}> Ver trailer</button>
+            <button className={ [styles.button_open_modal, "button_open_modal p-2  text-black" ]}onClick={()=>document.getElementById('my_modal_4').showModal()}> Ver trailer</button>
             <dialog id="my_modal_4" className="modal">
             <div className="modal-box w-auto max-w-fit bg-stone-900">
                 <iframe
@@ -17,7 +17,7 @@ const ModalTrailer = ({videoUrl}) => {
                     allowFullScreen
                     crossorigin="anonymous"
                     ></iframe>              
-                <div className="modal-action">
+                <div className={styles.modal_action}>
                 <form method="dialog">
                     {/* if there is a button, it will close the modal */}
                     <button className="btn">Cerrar</button>

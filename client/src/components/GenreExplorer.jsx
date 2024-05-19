@@ -1,15 +1,15 @@
 import React from 'react'
-import MovieList from './MovieList';
-import MovieListMobile from './MovieListMobile';
+import CarouselCards from './CarouselCards';
 
 const GenreExplorer = ({genre, movies}) => {
 
+  console.log("Recibiendo las peliculas antes de filtrar", movies)
 
 
   const filteredMovies = movies.filter((movie)=> movie.genre.includes(genre));
   
 
-  console.log(`Películas en ${genre}:`, filteredMovies);
+  console.log(`Películas en ${genre} filtrada:`, filteredMovies);
 
 
 
@@ -17,25 +17,22 @@ const GenreExplorer = ({genre, movies}) => {
 
 
 
-  if( filteredMovies.length === 0){
-    return (
-      <div>
-        <h2>No hay peliculas disponibles en el genero {genre}</h2>
-      </div>
-    )
-  }
+  // if( filteredMovies.length === 0){
+  //   return (
+  //     <div>
+  //       <h2>No hay peliculas disponibles en el genero {genre}</h2>
+  //     </div>
+  //   )
+  // }
 
   return (
       <>
-      <div className='movie-list_desktop_container'>
-        <MovieList title={`${genre}`} movies={filteredMovies}/>
-      </div>
-      <div className='movie-list_mobile_container'>
-        <MovieListMobile title={`${genre}`} movies={filteredMovies}/>
+      <div>
+        <CarouselCards movies={filteredMovies} title={genre} key={genre}/>
       </div>
       </>
 
     )
 }
 
-export default GenreExplorer
+export default GenreExplorer;
