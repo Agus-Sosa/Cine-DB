@@ -1,0 +1,52 @@
+.contaner_explore_principal {
+    margin: 80px;
+}
+
+
+.header_explorer {
+    /* border-bottom: solid 1px white; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding-bottom: 10px;
+
+    & h1 { 
+        /* border-bottom: solid 1px white; */
+        color: white;
+        font-weight: bold;
+        font-size: 28px;
+    }
+}
+
+
+
+.container_filtres {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.container_cards {
+    margin-top: 25px;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en una nueva línea si no caben en una sola fila */
+    gap: 20px; /* Espacio entre las tarjetas */
+  }
+
+
+.movie_card {
+    flex: 1 1 calc(25% - 20px); /* Hace que las tarjetas ocupen aproximadamente el 25% del contenedor, menos el espacio del gap */
+}
+
+
+
+/* .container_search {
+    & input {
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: #272727;
+        margin: 0px 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        outline: none;
+    }
+} */

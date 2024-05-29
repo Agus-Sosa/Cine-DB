@@ -5,7 +5,7 @@ import 'swiper/css/navigation';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-import { API_URL } from '../api/api';
+import { API_URLS } from '../api/api';
 import axios from 'axios';
 import Loader from './Loader';
 import styles from "../styles/coverPage.module.css"
@@ -35,7 +35,7 @@ const swiperRef = useRef(null);
     useEffect(()=> {
         const axiosData = async() => {
             try {
-                const response = await axios.get(`${API_URL}/frontPage`);
+                const response = await axios.get(API_URLS.GET_MOVIES_FRONT_PAGE);
                 setFrontPageMovie(response.data.moviesFrontPage);
                 setLoading(false)
             } catch (error) {

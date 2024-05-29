@@ -8,6 +8,7 @@ import Loader from "../Loader";
 import CarouselCards from "../CarouselCards";
 import CatalogMessage from "../CatalogMessage";
 import FeaturedMoviePoster from "../featuredMoviePoster";
+import { API_URLS } from "../../api/api";
 const HomeConainer = () => {
 const [loading, setLoading]= useState(true)
 const [latestMovies, setLatestMovie] = useState([]);
@@ -21,7 +22,7 @@ const [featuredMovies, setFeaturedMovies] = useState([])
   useEffect(()=> {
     const axiosData = async ()=> {
       try {
-        const response = await axios.get("http://localhost:8080/api/movies/");
+        const response = await axios.get(API_URLS.GET_MOVIES);
        const allMovies =  response.data.movies;
 
        const latest = allMovies.filter(movies =>movies.isLatest);

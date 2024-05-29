@@ -35,7 +35,7 @@ const NavBar = () => {
 
   return (
     <>
-    <Navbar style={{zIndex:10000000}} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar style={{zIndex:10000000, background: "#222121"}} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -51,7 +51,7 @@ const NavBar = () => {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <ReactRouterLink to={'/'}>
         <NavbarItem>
-          <NextUILink  color="foreground" >
+          <NextUILink className="text-slate-200" >
             Inicio
           </NextUILink>
         </NavbarItem>
@@ -84,7 +84,10 @@ const NavBar = () => {
         <NavbarItem>Inicio</NavbarItem>
       </ReactRouterLink>
 
-    
+      <ReactRouterLink to={'/explorar'}>
+        <NavbarItem>Explorar</NavbarItem>
+      </ReactRouterLink>
+
       </NavbarMenu>
 
     </Navbar>

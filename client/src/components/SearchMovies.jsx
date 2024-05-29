@@ -93,13 +93,16 @@ const SearchMovies = ({movies}) => {
     <>
     <div className={styles.container}>
       <Input
-          classNames={{
+        color='default'
+          
+        classNames={{
+          
             base: "max-w-full sm:max-w-[20rem] h-10",
             mainWrapper: "h-full",
-            input: "text-small",
-            inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+            input: "text-white",
+            inputWrapper: "h-full font-normal text-default-500 bg-default-400/2 dark:bg-default-500/20",
           }}
-          className="bg-gray-800 input_search"
+          className={`bg-gray-800 ${styles.input_search}`}
           style={{width:"30vw", textAlign: "start", fontSize: "18px"}}
           // width={"500px"}
           placeholder="Buscar pelicula"
@@ -110,7 +113,7 @@ const SearchMovies = ({movies}) => {
             // startContent={}
           type="search"
         />
-      {searchTerm && setSuggestedMovies.length > 0 &&(
+      {searchTerm && suggestMovies.length > 0 &&(
         <div className={styles.container_modal_suggest}>
           <h5>Sugerencias</h5>
           <div style={{maxHeight: "19vw", overflowY: "scroll"}} className={styles.container_card_search}>
@@ -128,6 +131,7 @@ const SearchMovies = ({movies}) => {
             </div>
             </Link>
           ))}
+
           </div>
         </div>
       )}

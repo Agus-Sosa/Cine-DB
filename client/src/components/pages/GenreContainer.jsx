@@ -3,6 +3,7 @@ import GenreExplorer from '../GenreExplorer'
 import axios from 'axios';
 import Loader from '../Loader';
 import styles from '../../styles/genreContainer.module.css'
+import { API_URLS } from '../../api/api.js';
 const GenreContainer = () => {
     const [movies, setMovies] = useState([]);
     const genres = ['Accion', 'Aventura', "Fantasia", "Suspenso"]
@@ -11,7 +12,7 @@ const GenreContainer = () => {
     useEffect(()=> {
         const axiosData = async() => {
             try {
-                const response = await axios.get("http://localhost:8080/api/movies/");
+                const response = await axios.get(API_URLS.GET_MOVIES);
                 setMovies(response.data.movies);
                 setLoading(false)
             } catch (error) {
