@@ -56,7 +56,7 @@ const [featuredMovies, setFeaturedMovies] = useState([])
 
   return (
     <>
-      <section className={`mx-10`}>
+      <section className={`mx-10 mt-6`}>
       <CoverPage/>
       <div>
 

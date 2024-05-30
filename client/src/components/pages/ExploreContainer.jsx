@@ -5,6 +5,7 @@ import styles from '../../styles/explorerContainer.module.css';
 import MovieCard from '../MovieCard';
 import { FaCaretDown } from "react-icons/fa";
 import Loader from '../Loader';
+import {Fade} from 'react-awesome-reveal'
 
 
 const ExploreContainer = () => {
@@ -12,6 +13,7 @@ const [movies, setMovies]= useState([]);
 const [filteredMovies, setFilteredMovies] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState('');
   const [isLoading,setIsLoading] = useState(true)
+  const [orderYears, setOrderYears] = useState("desc")
 const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
 
 
@@ -32,20 +34,37 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
       }, [])
 
       useEffect(() => {
-        if (selectedGenre === '') {
+        if (!movies.length) return 
           setFilteredMovies(movies);
-        } else {
-          const filtered = movies.filter((movie) =>
+
+          let filtered = movies;
+          console.log(filtered)
+          if(selectedGenre){
+
+          filtered = filtered.filter((movie) =>
             movie.genre && movie.genre.some((genre) => genre === selectedGenre)
         );
-          setFilteredMovies(filtered);
+      }
+
+      filtered =filtered.sort((a,b)=> {
+        if(orderYears === "asc") {
+          return a.year - b.year;
+        } else {
+          return b.year - a.year
         }
-      }, [selectedGenre, movies]);
+      })
+
+          setFilteredMovies(filtered);
+        
+      }, [selectedGenre, movies, orderYears]);
     
       const handleGenreChange = (genre) => {
         setSelectedGenre(genre);
       };
-    
+      
+  const handleSortOrderChange = (order) => {
+    setOrderYears(order);
+  };
       
   return (
     <>
@@ -54,8 +73,9 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
         <h1>Explorar</h1>
         <div className={styles.container_filter}>
         {isLoading ? (
-         <Loader/>
+          <Loader/>
           ) : (
+            <>
               <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn m-1 mx-7 ">
                   Buscar por genero <FaCaretDown />
@@ -71,13 +91,25 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
                   ))}
                 </ul>
               </div>
+                
+              <div className="dropdown">
+                <div tabIndex={0} role="button" className="btn m-1">Ordenar por año <FaCaretDown /></div>
+                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><p onClick={()=> handleSortOrderChange("asc")}>Mas recientes</p></li>
+                  <li><p onClick={()=> handleSortOrderChange("desc")}>Mas antiguo</p></li>
+                </ul>
+              </div>
+              </>
+
             )}
         </div>
       </div>
       <div className={styles.container_cards}>
+        <Fade cascade>
         {filteredMovies.map((movie)=> (
           <MovieCard movie={movie} key={movie._id} className={styles.movie_card}/>
         ))}
+        </Fade>
       </div>
     </section>
     </>
