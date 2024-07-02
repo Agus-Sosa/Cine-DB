@@ -77,7 +77,7 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
           ) : (
             <>
               <div className={`${styles.filter_movie} dropdown`}>
-                <div tabIndex={0} role="button" className={`btn m-1 mx-7 ${styles.title_filter}`}>
+                <div tabIndex={0} role="button" className={`btn m-1  ${styles.title_filter}`}>
                   Genero <FaCaretDown />
                 </div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -93,7 +93,7 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
               </div>
                 
               <div className={`${styles.filter_movie} dropdown`}>
-                <div tabIndex={0} role="button" className={`btn m-1 mx-7 ${styles.title_filter}`}>Lanzamiento<FaCaretDown /></div>
+                <div tabIndex={0} role="button" className={`btn ${styles.title_filter}`}>Lanzamiento<FaCaretDown /></div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li><p onClick={()=> handleSortOrderChange("asc")}>Mas recientes</p></li>
                   <li><p onClick={()=> handleSortOrderChange("desc")}>Mas antiguo</p></li>

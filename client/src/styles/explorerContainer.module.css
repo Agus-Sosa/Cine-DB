@@ -90,3 +90,23 @@
         outline: none;
     }
 } */
+
+
+@media (width < 700px) {
+    .title_filter {
+        width: max-content;
+        /* margin-right: 100px; */
+    }
+
+    .container_filter {
+        display: flex;
+        gap: 15px;
+        margin:  10px 0;
+        align-items: center;
+    }
+
+    .header_explorer {
+        display: block;
+    }
+
+}
