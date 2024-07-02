@@ -1,8 +1,12 @@
 import React from 'react'
-import { IoAddSharp, IoShareSocialSharp  } from "react-icons/io5";
-import { FaStar } from "react-icons/fa";
-import '../styles/movieDetailMobile.css'
-import MovieImagesCarousel from './MovieImagesCarousel';
+import {IoShareSocialSharp  } from "react-icons/io5";
+
+import styles from  '../styles/movieDetailMobile.module.css'
+import { Virtual, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 const MovieDetailMobile = ({movie}) => {
 
 
@@ -13,39 +17,57 @@ const MovieDetailMobile = ({movie}) => {
 
 
     return (
-        <section className='container_details_general_mobile'>
-        <div className='container_image_details' style={containerStyle} key={movie._id}>
-        <div className='container_image_info_top'>
-            <button><IoAddSharp/></button>
+        <section className={styles.container_details_general_mobile}>
+        <div className={styles.container_image_details} style={containerStyle} key={movie._id}>
+        <div className={styles.container_image_info_top}>
+            {/* <button><IoAddSharp/></button> */}
             <a href=""><IoShareSocialSharp/></a>
         </div>
-        <div className='container_image_info_bottom'>
+        <div className={styles.container_image_info_bottom}>
             <h1>{movie.title}</h1>
-            <p><FaStar/> {movie.rating}/10</p>
+            {/* <p><FaStar/> {movie.rating}/10</p> */}
         </div>
         </div>
 
-        <div className='container_info_movie'>
-            <div className='container_info_movie_top'>
-                <div className='hours_years_details'>
+        <div className={styles.container_info_movie}>
+            <div className={styles.container_info_movie_top}>
+                <div className={styles.hours_years_details}>
                     <span>{movie.year}</span>
                     <span> • </span>
                     <span>{movie.duration} min</span>
                 </div>
-                <div className='genre_detail'>
+                <div className={styles.genre_detail}>
                     <p>{movie.genre.join(', ')}</p>
                 </div>
             </div>
 
-            <div className='director_detail'>
+            <div className={styles.director_detail}>
                 <h3>Director</h3>
                 <p>{movie.director}</p>
             </div>
-
-            <MovieImagesCarousel movie={movie}/>
             
+            <div className={styles.container_actors_carousel}>
+            <h3>Reparto</h3>
+            <Swiper 
+              // spaceBetween={8}
+                slidesPerView={1.8}
+                modules={[Navigation, Pagination]}
+                allowTouchMove={true}
+                >
+                {movie.actors.map((actor, index)=> (
+                    <SwiperSlide id={index}>
+                    <div className={styles.card_actors}>
+                    <article>
+                        <img src={actor.image} alt={actor.name} />
+                    </article>
+                    <p>{actor.name}</p>
+                    </div>
+                        </SwiperSlide>
+                ))}
+                </Swiper>
+            </div>
 
-            <div className='synopsis_detail'>
+            <div className={styles.synopsis_detail}>
                 <h3>Sinopsis</h3>
                 <p>{movie.synopsis}</p>
             </div>

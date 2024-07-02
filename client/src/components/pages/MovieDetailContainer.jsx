@@ -62,6 +62,7 @@ import axios, { all } from 'axios';
 import Loader from '../Loader';
 import GenreExplorer from '../GenreExplorer';
 import CarouselCardsContainer from '../CarouselCardsContainer';
+import MovieDetailMobile from '../MovieDetailMobile';
 
 const MovieDetailContainer = () => {
   const { idMovie } = useParams();
@@ -113,6 +114,7 @@ const MovieDetailContainer = () => {
   return (
       <>
         <MovieDetail movie={movie} />
+        <MovieDetailMobile movie={movie}/>
         <div style={{padding: "2vw 4vw 0vw 4vw"}}>
 
         <CarouselCardsContainer title={"Peliculas Relacionadas"} movies={relatedMovies}/>

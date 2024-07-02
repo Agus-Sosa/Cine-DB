@@ -116,7 +116,7 @@ import 'swiper/css/navigation';
 const MovieDetail = ({movie}) => {
   return (
     <>
-    <section>
+    <section className={styles.container}>
 
     <div key={movie._id} className={styles.container_movie_details} style={{backgroundImage: `linear-gradient(rgba(0, 2, 0, 0.3), rgba(0, 2, 0, 0.3)), url(${movie.backgroundImage})`}}>
       <div className={styles.container_details_top}>

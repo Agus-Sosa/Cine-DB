@@ -121,3 +121,10 @@
 }
 
 
+
+
+@media (width < 650px) {
+    .container {
+        display: none;
+    }
+}
