@@ -5,7 +5,7 @@
 @media screen and (max-width: 639px) {
     .container_details_general_mobile {
         display: block;
-
+        box-shadow: 0px 5px 3px black;
         & .container_image_details {
             padding: 15px;
             height: 469px;

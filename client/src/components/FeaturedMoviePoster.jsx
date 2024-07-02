@@ -53,7 +53,7 @@ const handleNextClick=()=> {
                   <p className={`text-gray-400 font-semibold bg-slate-900 p-1 rounded-md ${styles.year}`}>{movie.year}</p>
                   <h4>{movie.title}</h4>
                   <div className={styles.container_buttons}>
-                  <button className={styles.button_trailer}>Ver trailer</button>
+                  {/* <button className={styles.button_trailer}>Ver trailer</button> */}
                   <Link to={`/movie/${movie._id}`}>
                       <button className={` ${styles.button_info} ` }>Mas informacion <MdKeyboardArrowRight  className='mx-2 text-2xl'/></button>
                   </Link>                  

@@ -89,7 +89,7 @@ const NavBar = () => {
 
       </NavbarContent>
   
-      <NavbarMenu>
+      <NavbarMenu className={`bg-transparent p-5`}>
       <ReactRouterLink to={'/'}>
         <NavbarItem>Inicio</NavbarItem>
       </ReactRouterLink>

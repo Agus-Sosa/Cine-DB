@@ -146,6 +146,11 @@
 }
 
 @media (width <= 850px) {
+
+    .container_movie_poster {
+        height: 50vw;
+    }
+
     .container_details_movie {
         display: flex;
         flex-direction: column;
@@ -154,8 +159,11 @@
             display: none;
         }
 
+        & h4 {
+            font-size: 14px;
+        }
         & .year {
-            font-size: 13px;
+            font-size: 10px;
         }
     }
 

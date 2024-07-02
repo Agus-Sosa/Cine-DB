@@ -77,10 +77,11 @@
 }
 
 
-@media (width <= 600px) {
+@media (width < 600px) {
     .container_cover_page {
+        width: auto;
         padding: 20px 20px;
-        height: 50vh;
+        height: 50vw;
 
         & h1 {
             font-size: 18px;
