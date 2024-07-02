@@ -44,21 +44,6 @@ const GenreContainer = () => {
         </section>
         </>
     )
-
-    // return (
-    //     <section>
-    //         <div className='title_genere flex flex-col items-center p-10  '>
-    //             <h2 className='text-white text-3xl h2_genre'>Generos</h2>
-    //             <p className='text-gray-400'>Explora películas por género. Acción, Fantasia y Mas. Encuentra tus favoritas fácilmente.</p>
-    //         </div>
-    //         <div className='header_genere'>
-
-    //         </div>
-    //         {genres.map((genre)=> (
-    //             <GenreExplorer key={genre} genre={genre} movies={movies}/>
-    //         ))}
-    //     </section>
-    //     )
 }
 
 export default GenreContainer

@@ -107,11 +107,19 @@
     }
 
     & .button_info {
-        background: none;
+        background: rgb(203, 3, 3);
         box-shadow: none;
     }
 }
 
+
+@media (width < 1050px) {
+    .container_details_movie {
+        & .synopsis {
+            font-size: 14px;
+        }
+    }
+}
 
 @media (width <= 1000px) {
 
@@ -136,7 +144,7 @@
             font-size: 14px;
         }
         & .button_info {
-            background: none;
+            /* background: none; */
             align-items: center;
             & svg {
                 font-size: 14px;

@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CoverPage from "../CoverPage";
-// import MovieList from "../MovieList";
-// import { movies } from "../../temp/data";
 import axios from 'axios'
 import Loader from "../Loader";
 import CatalogMessage from "../CatalogMessage";
-import FeaturedMoviePoster from "../featuredMoviePoster";
 import { API_URLS } from "../../api/api";
 import CarouselCardsContainer from "../CarouselCardsContainer";
 import styles from '../../styles/homeContainer.module.css'
+import FeaturedMoviePoster from "../FeaturedMoviePoster";
 
 const HomeConainer = () => {
 const [loading, setLoading]= useState(true)
@@ -16,18 +14,15 @@ const [latestMovies, setLatestMovie] = useState([]);
 const [popularMovies, setPopularMovies]= useState([]);
 const [topRatedMovies, setTopRatedMovies]= useState([])
 const [featuredMovies, setFeaturedMovies] = useState([])
-  // const containerStyle = {
-  //   backgroundColor: 'rgb(19 19 19)'
-  // }
-  
+
   useEffect(()=> {
     const axiosData = async ()=> {
       try {
         const response = await axios.get(API_URLS.GET_MOVIES);
-       const allMovies =  response.data.movies;
+        const allMovies =  response.data.movies;
 
-       const latest = allMovies.filter(movies =>movies.isLatest);
-       setLatestMovie(latest);
+        const latest = allMovies.filter(movies =>movies.isLatest);
+        setLatestMovie(latest);
       
 
         const popular = allMovies.filter(movies=> movies.isPopular);
@@ -73,27 +68,6 @@ const [featuredMovies, setFeaturedMovies] = useState([])
     </>
   )
 
-  // return (
-  //   <> 
-
-  //     <div >
-  //       <div className="cover-page_desktop_container">
-  //       <CoverPage/>
-  //       </div>
-  //       <div className="cover-page_mobile_container">
-  //       <CoverPageMobile/>
-  //       </div>
-
-  //         <div className="movie-list_mobile_container">
-
-  //         </div>
-          
-  //     </div>
-
-
-  //   </>
-
-  // );
 };
 
 export default HomeConainer;

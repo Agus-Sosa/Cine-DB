@@ -98,6 +98,10 @@ const NavBar = () => {
         <NavbarItem>Explorar</NavbarItem>
       </ReactRouterLink>
 
+      <ReactRouterLink to={"/generos"}>
+        <NavbarItem>Generos</NavbarItem>
+      </ReactRouterLink>
+
       </NavbarMenu>
 
     </Navbar>

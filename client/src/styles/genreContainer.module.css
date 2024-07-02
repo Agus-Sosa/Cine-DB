@@ -31,7 +31,9 @@
 
         & p {
             font-size: 15px;
-            margin: 0px 70px;
+            margin: 0px 15px;
+            align-items: center;
+            text-align: center;
         }
     }
 }
