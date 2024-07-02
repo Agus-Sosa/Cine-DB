@@ -30,10 +30,10 @@ const handleNextClick=()=> {
       pagination={true}
       loop={true}
       scrollbar={{hide: true}}
-      modules={[Navigation, Scrollbar, Autoplay]} 
+      modules={[Navigation, Scrollbar]} 
       className="mySwiper"
       navigation={{ prevEl: null, nextEl: null }}
-      autoplay={{delay:3500, disableOnInteraction: false }}
+      // autoplay={{delay:3500, disableOnInteraction: false }}
       
       >
         {movies.map((movie)=> (
@@ -50,7 +50,7 @@ const handleNextClick=()=> {
                 </div>
 
                 <div className={`${styles.container_details_movie} flex flex-col items-start`} >
-                  <p className='text-gray-400 font-semibold bg-slate-900 p-1 rounded-md'>{movie.year}</p>
+                  <p className={`text-gray-400 font-semibold bg-slate-900 p-1 rounded-md ${styles.year}`}>{movie.year}</p>
                   <h4>{movie.title}</h4>
                   <div className={styles.container_buttons}>
                   <button className={styles.button_trailer}>Ver trailer</button>
@@ -58,7 +58,7 @@ const handleNextClick=()=> {
                       <button className={` ${styles.button_info} ` }>Mas informacion <MdKeyboardArrowRight  className='mx-2 text-2xl'/></button>
                   </Link>                  
                   </div>
-                  <p className='text-white'>{movie.synopsis}</p>
+                  <p className={`text-white ${styles.synopsis}`}>{movie.synopsis}</p>
 
               
                 </div>

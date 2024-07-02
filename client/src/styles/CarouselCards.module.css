@@ -23,3 +23,9 @@
      margin: 2vw;
      font-size: 1.1vw;
 }
+
+@media (width < 900px) {
+    .arrow_carousel {
+        display: none;
+    }
+}

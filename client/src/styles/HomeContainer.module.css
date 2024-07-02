@@ -1,10 +1,11 @@
 
-.content_home {
-    
-}
 
 .movie-list_mobile_container {
     display: none;
+}
+
+.container_home {
+    margin: 1.5rem 2.5rem 0 2.5rem;
 }
 
 
@@ -21,9 +22,10 @@
         display: none;
     }
     
+    
 }
 
-@media screen and (max-width: 850px) {
+@media (width < 850px) {
     .cover-page_mobile_container {
         display: block;
     }
@@ -32,4 +34,19 @@
         display: none;
     }
     
+}
+
+
+@media (width < 650px) {
+    .container_home {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (width < 480px) {
+    .container_home {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }

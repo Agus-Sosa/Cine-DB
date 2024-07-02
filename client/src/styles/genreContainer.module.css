@@ -20,3 +20,18 @@
     }
 
 }
+
+
+@media (width < 850px) {
+    .header_genre_container {
+        
+        & h1 {
+            font-size: 24px;
+        }
+
+        & p {
+            font-size: 15px;
+            margin: 0px 70px;
+        }
+    }
+}

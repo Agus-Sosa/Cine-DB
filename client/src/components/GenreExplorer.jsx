@@ -1,5 +1,5 @@
 import React from 'react'
-import CarouselCards from './CarouselCards';
+import CarouselCardsContainer from './CarouselCardsContainer';
 
 const GenreExplorer = ({genre, movies}) => {
 
@@ -28,7 +28,7 @@ const GenreExplorer = ({genre, movies}) => {
   return (
       <>
       <div>
-        <CarouselCards movies={filteredMovies} title={genre} key={genre}/>
+        <CarouselCardsContainer movies={filteredMovies} title={genre} key={genre}/>
       </div>
       </>
 

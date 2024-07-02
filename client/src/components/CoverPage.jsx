@@ -71,7 +71,7 @@ const swiperRef = useRef(null);
                             {/* <p className={styles.p_description}>{movie.description}</p> */}
                             <div className={styles.container_buttons}>
                                 <Link to={`/movie:${frontPageMovie.link}`}>
-                                <button className={`${styles.button_info} bg-inherit border-gray-600 text-gray-300 rounded-xl p-3 flex items-center text-center border-2 transition-all font-semibold  border-solid` }>Mas informacion <MdKeyboardArrowRight  className='mx-2 text-2xl'/></button>
+                                <button className={`${styles.button_info} ` }>Mas informacion <MdKeyboardArrowRight  className='mx-2 text-2xl'/></button>
                                 </Link>
                             </div>  
                         </div>

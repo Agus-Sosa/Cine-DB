@@ -25,7 +25,7 @@
     color: white;
     
     & h4 {
-        font-size: 30px;
+        font-size: 1.5vw;
         font-family: "Montserrat", sans-serif;
         font-optical-sizing: auto;
         font-weight: 700;
@@ -33,11 +33,38 @@
     }
 
     & .container_genre {
-        & div {
+        & .genre_p {
             padding: 8px;
+            font-size: 0.8vw;
             margin-right: 10px;
             border-radius: 5px;
         }
     }
 }
 
+
+
+@media (width <= 870px) {
+
+    .container_movie_card {
+        width: 40vw;
+        height: 40vw;
+        background-position: center;
+    }
+
+
+    .container_details {
+
+        & h4 {
+            /* display: none; */
+            font-weight: 500;
+
+            font-size: 2.5vw;
+        }
+
+        & .container_genre {
+            display: none;
+        }
+    }
+    
+}

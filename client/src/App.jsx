@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound";
 import ExploreContainer from "./components/pages/ExploreContainer";
 import GenreContainer from "./components/pages/GenreContainer";
 import HomeConainer from "./components/pages/HomeConainer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 // import Test from "./components/pages/test";
 function App() {
  
@@ -14,13 +15,14 @@ function App() {
     <>
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={[<NavBar/>, <HomeConainer /> ]} />
+              <Route path="/" element={[<NavBar/>, <HomeConainer />, <ScrollToTopButton/> ]} />
               <Route path="*" element={<NotFound/>}/> 
               {/* <Route path="/test" element={<Tests/>}/>        */}
               <Route path="/movie/:idMovie" element={[<NavBar />, <MovieDetailContainer/> ]} />
-              <Route path="/generos" element={ [<NavBar/>,<GenreContainer/>]}/>
-              <Route path="/explorar" element={[<NavBar/> ,<ExploreContainer/>]}/>
+              <Route path="/generos" element={ [<NavBar/>,<GenreContainer/>, <ScrollToTopButton/>]}/>
+              <Route path="/explorar" element={[<NavBar/> ,<ExploreContainer/>, <ScrollToTopButton/>]}/>
           </Routes>
+
           <Footer />
         </BrowserRouter>
     </>

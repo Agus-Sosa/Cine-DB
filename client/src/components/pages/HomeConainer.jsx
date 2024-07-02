@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import CoverPage from "../CoverPage";
 // import MovieList from "../MovieList";
 // import { movies } from "../../temp/data";
-import styles from '../../styles/HomeContainer.module.css'
 import axios from 'axios'
 import Loader from "../Loader";
-import CarouselCards from "../CarouselCards";
 import CatalogMessage from "../CatalogMessage";
 import FeaturedMoviePoster from "../featuredMoviePoster";
 import { API_URLS } from "../../api/api";
+import CarouselCardsContainer from "../CarouselCardsContainer";
+import styles from '../../styles/homeContainer.module.css'
+
 const HomeConainer = () => {
 const [loading, setLoading]= useState(true)
 const [latestMovies, setLatestMovie] = useState([]);
@@ -56,14 +57,14 @@ const [featuredMovies, setFeaturedMovies] = useState([])
 
   return (
     <>
-      <section className={`mx-10 mt-6`}>
+      <section className={`${styles.container_home}`}>
       <CoverPage/>
       <div>
 
-      <CarouselCards movies={popularMovies} title={"Destacados"}/>
-      <CarouselCards movies={latestMovies} title={"Nuevos Estrenos"}/>
+      <CarouselCardsContainer movies={popularMovies} title={"Destacados"}/>
+      <CarouselCardsContainer movies={latestMovies} title={"Nuevos Estrenos"}/>
       <FeaturedMoviePoster movies={featuredMovies}/>
-      <CarouselCards movies={topRatedMovies} title={"Mejores Peliculas"}/>
+      <CarouselCardsContainer movies={topRatedMovies} title={"Mejores Peliculas"}/>
 
       <CatalogMessage/>
       </div>

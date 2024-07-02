@@ -5,11 +5,13 @@ import { Link as NextUILink } from "@nextui-org/react";
 import SearchMovies from "./SearchMovies";
 import axios from "axios";
 import styles from '../styles/navBar.module.css'
+import SearchMoviesMobile from "./SearchMoviesMobile";
+import { IoMdClose, IoMdSearch } from "react-icons/io";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [movies, setMovies] = useState();
-
+  const [searchModalOpen, setSearchModalOpen] = useState(false)
 
 
 
@@ -26,6 +28,10 @@ const NavBar = () => {
     axiosData();
   },[])
 
+  const toggleModal = ()=> {
+    setSearchModalOpen(prev => !prev)
+  }
+
 
   const menuItems = [
     "Inicio",
@@ -35,7 +41,7 @@ const NavBar = () => {
 
   return (
     <>
-    <Navbar style={{zIndex:10000000, background: "#222121"}} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar style={{zIndex:10000000, background: "#222121"}}  className="relative" onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -76,6 +82,10 @@ const NavBar = () => {
       
       <NavbarContent justify="end">
       <SearchMovies movies={movies}/>
+      <button className={styles.button_open_modal} onClick={toggleModal}>
+        {searchModalOpen ? <IoMdClose className={styles.icon_modal}/> : <IoMdSearch className={styles.icon_modal}/>}
+      </button>
+      <SearchMoviesMobile movies={movies} isOpen={searchModalOpen} onClose={toggleModal}/>
 
       </NavbarContent>
   

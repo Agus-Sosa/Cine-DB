@@ -24,6 +24,20 @@
 }
 
 
+.button_info {
+    background-color: inherit;
+  border: 2px solid #4b5563; /* border-gray-600 */
+  color: #d1d5db; /* text-gray-300 */
+  border-radius: 1rem; /* rounded-xl */
+  padding: 0.75rem; /* p-3 */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  text-align: center; /* text-center */
+  transition: all 0.2s; /* transition-all */
+  font-weight: 600; /* font-semibold */
+  border-style: solid; /* border-solid */
+}
+
 
 
 
@@ -60,4 +74,33 @@
         }
     }
 
+}
+
+
+@media (width <= 600px) {
+    .container_cover_page {
+        padding: 20px 20px;
+        height: 50vh;
+
+        & h1 {
+            font-size: 18px;
+        }
+    }
+
+    .container_details_movie {
+        & p {
+            font-size: 10px;
+        }
+    }
+
+    .arrow_carousel {
+        display: none;
+    }
+    .button_info  {
+        font-size: 12px;
+        padding: 5px;
+        border-radius: 6px;
+        margin: auto;
+        
+    }
 }

@@ -1,4 +1,4 @@
-.contaner_explore_principal {
+.container_explore_principal {
     margin: 80px;
 }
 
@@ -36,6 +36,46 @@
 
 .movie_card {
     flex: 1 1 calc(25% - 20px); /* Hace que las tarjetas ocupen aproximadamente el 25% del contenedor, menos el espacio del gap */
+}
+
+
+
+
+@media (width <= 980px) {
+
+
+    .header_explorer {
+        & h1 {
+            font-size: 22px;
+        }
+    }
+
+
+
+    
+    .filter_movie {
+        font-size: 10px;
+        width: 21vw;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title_filter  {
+        font-size: 12px;
+    }
+
+}
+
+
+
+@media ( width <= 850px) {
+    .container_explore_principal {
+        margin: 30px;
+    }
+
+
+    
 }
 
 

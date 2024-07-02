@@ -94,3 +94,19 @@
     object-fit: cover;
     background-position: center;
 }
+
+
+
+@media screen and (max-width: 770px) {
+    .icon_search svg {
+        font-size: 16px;
+    }
+}
+
+@media (width <= 900px) {
+    .container {
+        display: none;
+    }
+
+    
+}

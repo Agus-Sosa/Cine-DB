@@ -75,20 +75,16 @@ import { FaSearch } from "react-icons/fa";
 import styles from "../styles/searchMovies2.module.css"
 const SearchMovies = ({movies}) => {
 
-  const [searchTerm, setSearchTerm ] = useState('');
+    const [searchTerm, setSearchTerm ] = useState('');
     const [suggestMovies, setSuggestedMovies]= useState([]);
-
     const handleInputChange =(event)=> {
         const inputText = event.target.value;
         setSearchTerm(inputText);
-
         const filteredMovies = movies.filter(movie => 
             movie.title.toLowerCase().includes(inputText.toLowerCase())
             );
-
             setSuggestedMovies(filteredMovies)
-
-    }
+      }
   return (
     <>
     <div className={styles.container}>
@@ -107,7 +103,7 @@ const SearchMovies = ({movies}) => {
           // width={"500px"}
           placeholder="Buscar pelicula"
           size="sm"
-          startContent={<FaSearch style={{fontSize:"35px", margin: " 0 10px"}}/>}
+          startContent={<FaSearch className={styles.icon_search} style={{fontSize:"2vw", margin: " 0 10px"}}/>}
           value={searchTerm}
           onChange={handleInputChange}
             // startContent={}

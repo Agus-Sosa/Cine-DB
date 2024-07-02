@@ -68,7 +68,7 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
       
   return (
     <>
-    <section className={styles.contaner_explore_principal}>
+    <section className={styles.container_explore_principal}>
       <div className={styles.header_explorer}>
         <h1>Explorar</h1>
         <div className={styles.container_filter}>
@@ -76,9 +76,9 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
           <Loader/>
           ) : (
             <>
-              <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1 mx-7 ">
-                  Buscar por genero <FaCaretDown />
+              <div className={`${styles.filter_movie} dropdown`}>
+                <div tabIndex={0} role="button" className={`btn m-1 mx-7 ${styles.title_filter}`}>
+                  Genero <FaCaretDown />
                 </div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li>
@@ -92,8 +92,8 @@ const genres = ['Accion', 'Fantasia', "Aventura", "Suspenso"]
                 </ul>
               </div>
                 
-              <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1">Ordenar por año <FaCaretDown /></div>
+              <div className={`${styles.filter_movie} dropdown`}>
+                <div tabIndex={0} role="button" className={`btn m-1 mx-7 ${styles.title_filter}`}>Lanzamiento<FaCaretDown /></div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li><p onClick={()=> handleSortOrderChange("asc")}>Mas recientes</p></li>
                   <li><p onClick={()=> handleSortOrderChange("desc")}>Mas antiguo</p></li>

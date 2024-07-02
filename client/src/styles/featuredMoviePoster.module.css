@@ -40,8 +40,12 @@
 .container_details_movie {
     width: 30vw;
 
-    & p {
+    & .synopsis {
         
+        font-size: 18px;
+    }
+
+    & .year {
         font-size: 18px;
     }
 }
@@ -103,9 +107,66 @@
     }
 
     & .button_info {
-        background-color: rgb(19, 19, 19);
-        &:hover {
-            background-color: rgb(36, 36, 36);
+        background: none;
+        box-shadow: none;
+    }
+}
+
+
+@media (width <= 1000px) {
+
+    .container_featured {
+        & h3 {
+            margin-top: 15px;
+            font-size: 15px;
+            margin-bottom: 5px;
         }
+    }
+
+    .container_details_movie {
+        & .synopsis {
+            font-size: 13px;
+        }
+
+    }
+
+    .container_buttons {
+        & button {
+            padding: 8px;
+            font-size: 14px;
+        }
+        & .button_info {
+            background: none;
+            align-items: center;
+            & svg {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (width <= 850px) {
+    .container_details_movie {
+        display: flex;
+        flex-direction: column;
+
+        & .synopsis {
+            display: none;
+        }
+
+        & .year {
+            font-size: 13px;
+        }
+    }
+
+    .container_buttons {
+        display: block;
+        & button {
+            margin-bottom: 10px;
+            font-size: 12px;
+            padding: 5px;
+        }
+
+       
     }
 }

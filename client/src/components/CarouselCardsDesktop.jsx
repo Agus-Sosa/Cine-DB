@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Virtual, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import MovieCard from './MovieCard';
@@ -9,7 +10,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import styles from '../styles/CarouselCards.module.css'
 
 
-const CarouselCards = ({movies, title}) => {
+const CarouselCardsDesktop = ({movies, title}) => {
     const swiperRef = useRef(null);
 
 
@@ -33,13 +34,10 @@ const CarouselCards = ({movies, title}) => {
             <div className='relative'>
             <div onClick={handlePrevClick} className={`${styles.arrow_carousel} absolute left-0`}><MdKeyboardArrowLeft /></div>
             <Swiper
-            // loop={true}
             ref={swiperRef}
             modules={[Navigation, Pagination, Virtual]}
             slidesPerView={4}
-            
-            allowTouchMove={false}
-            // centeredSlides={true}
+            allowTouchMove={true}
             navigation={{ prevEl: null, nextEl: null }}
             >
             {movies.map((movie)=> (
@@ -50,7 +48,6 @@ const CarouselCards = ({movies, title}) => {
             </Swiper>
             <div onClick={handleNextClick} className={`${styles.arrow_carousel} absolute right-0`}><MdKeyboardArrowRight/></div>
             </div>
-
         </section>
         
     ): (
@@ -61,4 +58,4 @@ const CarouselCards = ({movies, title}) => {
     )
 }
 
-export default CarouselCards
+export default CarouselCardsDesktop;

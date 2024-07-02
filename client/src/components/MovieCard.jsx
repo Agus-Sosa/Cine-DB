@@ -11,7 +11,7 @@ const MovieCard = ({movie}) => {
         <h4>{movie.title}</h4>
         <div className={`${styles.container_genre}  flex`} key={movie}>
           {movie.genre.map((genre)=> (
-            <div className='bg-slate-900 mt-2'>{genre}</div>
+            <div className={` ${styles.genre_p} bg-slate-900 mt-2`}>{genre}</div>
           ))}
         </div>
       </div>
