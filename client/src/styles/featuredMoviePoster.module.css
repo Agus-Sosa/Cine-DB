@@ -157,6 +157,7 @@
 
     .container_movie_poster {
         height: 50vw;
+        padding: 0px;
     }
 
     .container_details_movie {
@@ -179,10 +180,14 @@
         display: block;
         & button {
             margin-bottom: 10px;
-            font-size: 12px;
+            font-size: 10px;
             padding: 5px;
         }
 
        
+    }
+
+    .arrow_carousel {
+        display: none;
     }
 }

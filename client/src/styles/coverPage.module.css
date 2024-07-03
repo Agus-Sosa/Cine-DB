@@ -77,6 +77,33 @@
 }
 
 
+@media (width < 1000px) {
+    .container_cover_page {
+        width: auto;
+        height: 60vw;
+        padding: 20px 30px;
+    
+        & h1 {
+            font-size: 22px;
+        }
+
+
+    }
+
+    .container_details_movie {
+        & p {
+            font-size: 14px;
+        }
+    }
+
+
+
+    .button_info {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+
 @media (width < 600px) {
     .container_cover_page {
         width: auto;
