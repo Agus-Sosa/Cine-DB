@@ -1,0 +1,21 @@
+
+
+.button_open {
+  transition: .5s all ;
+  font-weight: bold;
+  &:hover {
+
+    background-color: rgb(119, 118, 118);
+  }
+}
+
+.modal_box {
+  width: auto;
+}
+
+.button_open_modal {
+  background-color: whitesmoke;
+  color: white;
+  font-weight: 600;
+}
+

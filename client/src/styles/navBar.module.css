@@ -1,0 +1,32 @@
+
+
+.explore_button {
+  & a {
+    color:#cb0303 ;
+  }
+}
+
+.input_search {
+  border-radius: 10px;
+  border: solid 1px ;
+}
+
+
+.button_open_modal {
+  display: none;
+}
+
+.container_search_mobile {
+  display: none;
+}
+
+@media (width < 900px) {
+    .button_open_modal {
+      display: block;
+      font-size: 24px;
+  
+    }
+
+
+    
+}

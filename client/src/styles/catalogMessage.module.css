@@ -1,0 +1,16 @@
+@media (width <= 965px) {
+    .container {
+        & picture  {
+            width: 200px;
+        }
+
+
+        & .container_text {
+            font-size: 16px;
+        }
+    }
+
+    & .link_explorer {
+        font-size: 15px;
+    }
+}

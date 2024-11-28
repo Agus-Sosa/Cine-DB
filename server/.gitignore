@@ -1,0 +1,14 @@
+node_modules
+.env
+localStrategy.js
+session.controller.js
+userModel.js
+session.routes
+user.routes.js
+user.service.js
+favoriteModel.js
+favorite.controller.js
+favorite.service.js
+favorite.routes.js
+
+authentication

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+.container_movie_card {
+    width: 20vw;
+    height: 25vw;
+    transition: .5s all;
+    display: flex;
+    /* margin: 0px 30px 15px 0; */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 13px 11px 79px -24px rgba(0,0,0,1);
+    -webkit-box-shadow: 13px 11px 79px -24px rgba(0,0,0,1);
+    -moz-box-shadow: 13px 11px 79px -24px rgba(0,0,0,1);
+
+   
+}
+
+.container_details {
+    color: white;
+    
+    & h4 {
+        font-size: 1.5vw;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    & .container_genre {
+        & .genre_p {
+            padding: 8px;
+            font-size: 0.8vw;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    }
+}
+
+
+
+@media (width <= 870px) {
+
+    .container_movie_card {
+        width: 40vw;
+        height: 40vw;
+        background-position: center;
+    }
+
+
+    .container_details {
+
+        & h4 {
+            /* display: none; */
+            font-weight: 500;
+
+            font-size: 2.5vw;
+        }
+
+        & .container_genre {
+            display: none;
+        }
+    }
+    
+}
